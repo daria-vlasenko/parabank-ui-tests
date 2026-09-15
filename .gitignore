@@ -16,3 +16,12 @@ buildNumber.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Allure
+allure-results/
+allure-report/
+.allure/
