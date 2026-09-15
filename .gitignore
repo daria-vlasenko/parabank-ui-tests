@@ -25,3 +25,6 @@ buildNumber.properties
 allure-results/
 allure-report/
 .allure/
+
+# Selenide reports (старое расположение, до переезда в target/)
+build/

@@ -2,6 +2,7 @@ package com.parabank.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import com.parabank.data.NewUser;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -26,12 +27,14 @@ public class RegistrationPage {
     private final SelenideElement title = $("#rightPanel h1");
     private final SelenideElement message = $("#rightPanel p");
 
+    @Step("Открыть страницу регистрации")
     public RegistrationPage openPage() {
         open("/register.htm");
         firstNameInput.shouldBe(visible);
         return this;
     }
 
+    @Step("Зарегистрировать пользователя {user.username}")
     public RegistrationPage register(NewUser user) {
         firstNameInput.setValue(user.firstName());
         lastNameInput.setValue(user.lastName());
@@ -48,6 +51,7 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Проверить, что пользователь {username} зарегистрирован")
     public RegistrationPage shouldBeRegisteredAs(String username) {
         title.shouldHave(text("Welcome " + username));
         message.shouldHave(text("Your account was created successfully"));
