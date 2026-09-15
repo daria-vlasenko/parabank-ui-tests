@@ -16,6 +16,7 @@ public abstract class BaseWebTest {
         Configuration.baseUrl = WebConfig.BASE_URL;
         Configuration.timeout = WebConfig.TIMEOUT_MS;
         Configuration.browserSize = WebConfig.BROWSER_SIZE;
+        Configuration.reportsFolder = "target/selenide-reports";
 
         SelenideLogger.addListener("allure", new AllureSelenide()
                 .screenshots(true)
