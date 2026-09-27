@@ -22,6 +22,14 @@ public class LoginPage {
         return this;
     }
 
+    @Step("Проверить, что открыта форма входа")
+    public LoginPage shouldBeOpened() {
+        usernameInput.shouldBe(visible);
+        passwordInput.shouldBe(visible);
+        loginButton.shouldBe(visible);
+        return this;
+    }
+
     @Step("Войти под пользователем {username}")
     public AccountsOverviewPage loginAs(String username, String password) {
         fillCredentials(username, password);
